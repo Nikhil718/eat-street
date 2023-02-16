@@ -1,0 +1,41 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhil718/Namaste-React.git"
+  },
+  "author": "Nikhil Naik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhil718/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/Nikhil718/Namaste-React#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.2"
+  },
+  "browserslist": [
+    "last 10 Chrome versions"
+  ]
+}
