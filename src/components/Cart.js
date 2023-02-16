@@ -19,7 +19,7 @@ const Cart = () => {
       <div>
         {itemLength == 0 ? (
           <div className="flex justify-center">
-            <h2 className="text-3xl font-bold m-5 underline">
+            <h2 className="text-3xl font-bold m-5 underline sm:text-center">
               Your cart is empty
             </h2>
             <Link to="/">
