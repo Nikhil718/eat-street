@@ -18,8 +18,8 @@ const Cart = () => {
     <div className="flex justify-between">
       <div>
         {itemLength == 0 ? (
-          <div className="flex justify-center">
-            <h2 className="text-3xl font-bold m-5 underline sm:text-center">
+          <div className="flex sm:text-center">
+            <h2 className="text-3xl font-bold m-5 underline">
               Your cart is empty
             </h2>
             <Link to="/">
