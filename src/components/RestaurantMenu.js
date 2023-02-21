@@ -26,12 +26,12 @@ const RestaurantMenu = () => {
     <h3>Loding Details.....</h3>
   ) : (
     <div className="py-5">
-      <div className=" flex ml-96">
+      <div className=" flex justify-center bg-slate-100 w-full p-4 sticky top-0 z-20">
         <img
           className="h-44 rounded-md"
           src={CARD_IMG_URL + restaurantData.cloudinaryImageId}
         />
-        <div className="p-4">
+        <div className="p-4 ">
           <h1 className="font-bold text-3xl">{restaurantData.name}</h1>
           <h3 className="text-xl">{restaurantData.area}</h3>
           <h2>{restaurantData.city}</h2>

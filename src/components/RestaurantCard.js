@@ -10,7 +10,7 @@ const RestaurantCard = ({
   user,
 }) => {
   return (
-    <div className="w-56 h-80 p-8 mx-7 shadow-lg hover:shadow-2xl ">
+    <div className="w-56 h-80 p-8 m-4  shadow-2xl hover:shadow-inner rounded-lg ">
       <img alt="image" src={CARD_IMG_URL + cloudinaryImageId}></img>
       <h2 className="font-bold">{name}</h2>
       <h3 className="text-sm">{cuisines.join(", ")}</h3>

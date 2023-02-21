@@ -2,9 +2,9 @@ import { CAROUSEL_URL } from "../config";
 
 const CarouselCard = ({ creativeId }) => {
   return (
-    <div>
+    <div className=" m-3 hover:shadow-2xl ">
       <img
-        className="p-1 rounded-lg"
+        className=" rounded-lg"
         alt="image"
         src={CAROUSEL_URL + creativeId}
       ></img>

@@ -6,14 +6,13 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import ErrorElement from "./components/Error";
 import AboutUs from "./components/About";
-import ContactUs from "./components/Contact";
+import Offers from "./components/Offers";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Help from "./components/Help";
 import { Provider } from "react-redux";
 import store from "./components/shared/store";
 import Cart from "./components/Cart";
-import Login from "./components/Login";
 
 const AppLayout = () => {
   return (
@@ -36,10 +35,6 @@ const appRouter = createBrowserRouter([
     errorElement: <ErrorElement />,
     children: [
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
         path: "/",
         element: <Body />,
       },
@@ -55,8 +50,8 @@ const appRouter = createBrowserRouter([
         ],
       },
       {
-        path: "/contact",
-        element: <ContactUs />,
+        path: "/offers",
+        element: <Offers />,
       },
       {
         path: "/help",

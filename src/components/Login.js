@@ -1,23 +1,47 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "./shared/userInfoSlice";
 
-const Login = () => {
+const Login = ({ isVisible, onClose }) => {
+  const user = useSelector((store) => store.userInfo);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  if (!isVisible) return null;
   return (
-    <section className="bg-[url('https://wallpaperaccess.com/full/1314893.jpg')] ">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
-        <h1 class="flex items-center mb-6 text-2xl font-bold text-black ">
-          EAT STREET
-        </h1>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-slate-900 dark:border-gray-700">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
-            </h1>
+    <>
+      <div className="  fixed z-30 inset-0  backdrop-blur-sm flex items-center justify-center   ">
+        <div className="  w-[500px] h-4/5  bg-white rounded-lg shadow dark:border md:mt-0  xl:p-0 dark:bg-slate-900 dark:border-gray-700">
+          <div className=" p-6 space-y-4 md:space-y-6 sm:p-8">
+            <div className="flex ">
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                Sign in to your account
+              </h1>
+              <button
+                type="button"
+                class=" top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                onClick={onClose}
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+            </div>
             <Formik
               initialValues={{ name: "", email: "", password: "" }}
               validate={(values) => {
@@ -35,6 +59,7 @@ const Login = () => {
               onSubmit={(values) => {
                 dispatch(addUser(values));
                 navigate("/");
+                onClose();
               }}
             >
               {({
@@ -140,13 +165,7 @@ const Login = () => {
                     Sign in
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don't have an account yet?
-                    <a
-                      href="#"
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    >
-                      Sign up
-                    </a>
+                    Don't have an account yet? Sign up
                   </p>
                 </form>
               )}
@@ -154,7 +173,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 export default Login;
