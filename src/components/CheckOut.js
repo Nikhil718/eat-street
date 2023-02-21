@@ -25,7 +25,7 @@ const CheckOut = () => {
           {" "}
           Subtotal - ₹{cartAmount / 100}{" "}
         </h1>
-        <diV>
+        <div>
           <p class="mb-4 italic">
             If you have a coupon code, please enter it in the box below
           </p>
@@ -46,7 +46,7 @@ const CheckOut = () => {
               </button>
             </div>
           </div>
-        </diV>
+        </div>
         <button className="flex justify-center w-full p-2 uppercase rounded-lg bg-gray-600 mt-2 hover:bg-gray-500">
           <span className="font-medium text-white p-1">
             Proceed to CheckOut ➡️
