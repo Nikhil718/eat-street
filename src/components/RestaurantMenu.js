@@ -11,10 +11,12 @@ const RestaurantMenu = () => {
   const { restaurantId } = useParams();
   const restaurantData = useRestaurant(restaurantId);
   console.log(restaurantData);
+
   const dispatch = useDispatch();
 
   const handelAddItem = (item) => {
     dispatch(addItem(item));
+    console.log(item);
     setIsVisibal(true);
     setTimeout(() => {
       setIsVisibal(false);
@@ -23,20 +25,34 @@ const RestaurantMenu = () => {
   };
 
   return !restaurantData ? (
-    <h3>Loding Details.....</h3>
+    <h3 className="text-center">Loding menu please wait.....</h3>
   ) : (
-    <div className="py-5">
-      <div className=" flex justify-center bg-slate-100 w-full p-4 sticky top-0 z-20">
-        <img
-          className="h-44 rounded-md"
-          src={CARD_IMG_URL + restaurantData.cloudinaryImageId}
-        />
-        <div className="p-4 ">
-          <h1 className="font-bold text-3xl">{restaurantData.name}</h1>
-          <h3 className="text-xl">{restaurantData.area}</h3>
-          <h2>{restaurantData.city}</h2>
-          <h3>{restaurantData.costForTwoMsg}</h3>
-          <h3>{restaurantData.avgRatingString} Stars</h3>
+    <div className="py-2">
+      <div className=" flex bg-slate-100 w-full p-4 sticky top-0 z-20">
+        <div className="ml-32 flex ">
+          <img
+            className="h-44 mx-3 rounded-md"
+            src={CARD_IMG_URL + restaurantData.cloudinaryImageId}
+          />
+          <div className="p-4">
+            <h1 className="font-bold text-3xl">{restaurantData.name}</h1>
+            <h3 className="text-xl">{restaurantData.area}</h3>
+            <h2>{restaurantData.city}</h2>
+            <div className="flex font-semibold">
+              <h3>{restaurantData.costForTwoMsg}</h3>
+              <span className="px-1">|</span>
+              <h3>{restaurantData.avgRatingString} ★ </h3>
+              <span className="px-1">|</span>
+              <h3>{restaurantData.totalRatingsString} </h3>
+            </div>
+          </div>
+        </div>
+        <div className="m-6 border-2 border-dashed  p-3 border-gray-400">
+          {restaurantData.aggregatedDiscountInfo?.descriptionList?.map(
+            (item) => (
+              <h1 className="font-bold p-2">{item.meta}</h1>
+            )
+          )}
         </div>
       </div>
       <div className="p-5 ml-40">

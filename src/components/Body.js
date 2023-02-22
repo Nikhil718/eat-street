@@ -38,7 +38,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="px-8 flex ">
+      <div className="p-8 flex ">
         {carouselRestaurant.map((carouselRes) => {
           return (
             <Link to={""} key={carouselRes.data.bannerId}>

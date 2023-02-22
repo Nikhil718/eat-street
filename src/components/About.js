@@ -2,32 +2,27 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Profile from "./Profile";
 
-// const AboutUs1 = () => {
-//   return (
-//     <div>
-//       <h2>This is About Us page</h2>
-//       <Profile name={"Nikhil"} />
-//     </div>
-//   );
-// };
-// export default AboutUs;
+//
 
 class AboutUs extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent-Constructor");
+    this.state = {
+      userinfo: [],
+    };
   }
 
-  componentDidMount() {
-    console.log("Parent-ComponentDidMount");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/Nikhil718");
+    const json = await data.json();
+    this.setState({ userinfo: json });
+    console.log(this.state.userinfo);
   }
 
   render() {
-    console.log("Parent-Render");
     return (
       <div>
-        <h2>This is About Us page</h2>
-        <Profile name={"Child 1"} />
+        <Profile data={this.state.userinfo} />
       </div>
     );
   }
