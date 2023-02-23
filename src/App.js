@@ -13,6 +13,7 @@ import Help from "./components/Help";
 import { Provider } from "react-redux";
 import store from "./components/shared/store";
 import Cart from "./components/Cart";
+import PrivateRoute from "./components/PrivateRoute";
 
 const AppLayout = () => {
   return (
@@ -63,7 +64,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Cart />
+          </PrivateRoute>
+        ),
       },
     ],
   },

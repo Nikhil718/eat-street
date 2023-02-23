@@ -15,11 +15,18 @@ const Cart = () => {
   };
 
   return itemLength == 0 ? (
-    <div className="flex justify-center sm:text-center">
-      <h2 className="text-3xl font-bold m-5 underline">Your cart is empty</h2>
-      <Link to="/">
-        <button className="bg-green-400 rounded-lg p-2 m-5">Add</button>
-      </Link>
+    <div>
+      <div className="flex justify-center">
+        <img
+          alt="cart-empty-img"
+          src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png"
+        />
+      </div>
+      <div className="flex justify-center">
+        <Link to="/">
+          <button className="bg-green-400 rounded-lg p-2 m-5">Add</button>
+        </Link>
+      </div>
     </div>
   ) : (
     <div className="flex justify-between">
