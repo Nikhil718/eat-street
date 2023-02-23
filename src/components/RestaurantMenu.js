@@ -47,13 +47,14 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
-        <div className="m-6 border-2 border-dashed  p-3 border-gray-400">
+        <fieldset className="m-6 border-2 border-dashed  p-3 border-gray-400">
+          <legend className="text-[18px] p-2">OFFERS</legend>
           {restaurantData.aggregatedDiscountInfo?.descriptionList?.map(
             (item) => (
               <h1 className="font-bold p-2">{item.meta}</h1>
             )
           )}
-        </div>
+        </fieldset>
       </div>
       <div className="p-5 ml-40">
         {isVisibal && (

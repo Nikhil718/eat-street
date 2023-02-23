@@ -38,8 +38,8 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="p-8 flex ">
-        {carouselRestaurant.map((carouselRes) => {
+      <div className="p-8 mt-3 flex justify-center dark:bg-gray-900 ">
+        {carouselRestaurant.slice(3).map((carouselRes) => {
           return (
             <Link to={""} key={carouselRes.data.bannerId}>
               <CarouselCard {...carouselRes.data} />
