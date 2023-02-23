@@ -66,7 +66,6 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: (
           <PrivateRoute>
-            {" "}
             <Cart />
           </PrivateRoute>
         ),
