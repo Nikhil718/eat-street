@@ -1,4 +1,10 @@
 import { CARD_IMG_URL } from "../config";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTag,
+  faUserMinus,
+  faUserPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
 const RestaurantCard = ({
   cloudinaryImageId,
@@ -13,22 +19,28 @@ const RestaurantCard = ({
     <div className="w-60 h-80 p-8 m-4  shadow-2xl hover:shadow-inner hover:border-2 rounded-lg ">
       <img alt="image" src={CARD_IMG_URL + cloudinaryImageId}></img>
       <h2 className="font-bold">{name}</h2>
-      <h3 className="text-sm">{cuisines.join(", ")}</h3>
+      <h3 className="text-sm">{cuisines.slice(0, 6).join(", ")}</h3>
+      {console.log(cuisines)}
       <h4>{deliveryTime} mins</h4>
       <h3 className="text-sm">
         {costForTwoString}{" "}
         <span
           className={
             avgRating >= 4
-              ? "bg-green-400 rounded-lg font-bold p-1 text-sm"
-              : "bg-orange-400 rounded-lg font-bold p-1 text-sm"
+              ? "bg-green-400 rounded-lg font-bold p-1 text-sm ml-1"
+              : "bg-orange-400 rounded-lg font-bold p-1 text-sm ml-1"
           }
         >
           {avgRating}★
         </span>
       </h3>
 
-      <p className="font-semibold">{aggregatedDiscountInfo.header}</p>
+      <p className="font-mono mt-1 text-amber-800">
+        <span className="p-[2px]">
+          <FontAwesomeIcon icon={faTag} />
+        </span>
+        {aggregatedDiscountInfo.header}
+      </p>
     </div>
   );
 };
