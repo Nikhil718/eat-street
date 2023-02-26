@@ -43,7 +43,8 @@
     "react-icon": "^1.0.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.6.2"
+    "react-router-dom": "^6.6.2",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "browserslist": [
     "last 10 Chrome versions"

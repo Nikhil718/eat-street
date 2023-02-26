@@ -63,7 +63,7 @@ const Header = () => {
   return (
     <>
       <div className="sticky top-0 z-10 ">
-        <div className="flex justify-between  bg-white p-2 shadow-lg  ">
+        <div className="flex justify-between  bg-white p-2 shadow-xl  ">
           <TitleLeft />
           {user.isLoggedIn && (
             <h2 className="text-black text-xl font-bold m-10">

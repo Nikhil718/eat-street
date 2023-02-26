@@ -2,12 +2,12 @@ import { CAROUSEL_URL } from "../config";
 
 const CarouselCard = ({ creativeId }) => {
   return (
-    <div className=" m-3 hover:-rotate-2 ">
+    <div className="w-60">
       <img
-        className=" rounded-lg w-56"
-        alt="image"
+        className="inline-block p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300"
+        alt="crousel_img"
         src={CAROUSEL_URL + creativeId}
-      ></img>
+      />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { filterData } from "./shared/helper";
 import CarouselCard from "./CarouselCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [carouselRestaurant, setcarouselRestaurant] = useState([]);
@@ -33,19 +33,42 @@ const Body = () => {
   }
 
   if (!allRestaurants) return null;
+  const slideLeft = () => {
+    var slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - 300;
+  };
+  const slideRight = () => {
+    var slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft + 300;
+  };
 
   return allRestaurants?.length == 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="p-8 mt-3 flex justify-center dark:bg-gray-900 ">
-        {carouselRestaurant.slice(3).map((carouselRes) => {
-          return (
-            <Link to={""} key={carouselRes.data.bannerId}>
-              <CarouselCard {...carouselRes.data} />
-            </Link>
-          );
-        })}
+      <div className="p-5 dark:bg-gray-900 relative flex items-center justify-center">
+        <AiOutlineArrowLeft
+          onClick={() => slideLeft()}
+          className="bg-white rounded-full cursor-pointer p-1 opacity-50 hover:opacity-100 hover:scale-105"
+          size={30}
+        />
+        <div
+          id="slider"
+          className="flex  w-[64rem] h-full overflow-x-scroll whitespace-nowrap scroll-smooth gap-5 scrollbar-hide"
+        >
+          {carouselRestaurant.map((carouselRes) => {
+            return (
+              <Link to={""} key={carouselRes.data.bannerId}>
+                <CarouselCard {...carouselRes.data} />
+              </Link>
+            );
+          })}
+        </div>
+        <AiOutlineArrowRight
+          onClick={() => slideRight()}
+          className="bg-white rounded-full cursor-pointer p-1  opacity-50 hover:opacity-100 hover:scale-105"
+          size={30}
+        />
       </div>
 
       <div className=" flex items-center  mx-auto p-3 ">
