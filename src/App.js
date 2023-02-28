@@ -19,7 +19,7 @@ const AppLayout = () => {
   return (
     <>
       <Provider store={store}>
-        <div className="flex flex-col h-screen justify-between">
+        <div className="flex flex-col h-screen justify-between font-serif">
           <Header />
           <Outlet />
           <Footer />
