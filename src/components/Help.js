@@ -73,6 +73,45 @@ const Help = () => {
           setActiveSection("");
         }}
       />
+      <Section
+        title={"What is redux?"}
+        description={
+          "Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark."
+        }
+        isVisible={activeSection == "DOM"}
+        setIsVisible={() => {
+          setActiveSection("DOM");
+        }}
+        setIsInvisible={() => {
+          setActiveSection("");
+        }}
+      />
+      <Section
+        title={"What are hooks?"}
+        description={
+          "Hooks are functions that let you “hook into” React state and lifecycle features from function components. Hooks don't work inside classes — they let you use React without classes."
+        }
+        isVisible={activeSection == "DOM"}
+        setIsVisible={() => {
+          setActiveSection("DOM");
+        }}
+        setIsInvisible={() => {
+          setActiveSection("");
+        }}
+      />
+      <Section
+        title={"What is tailwind css?"}
+        description={
+          "Tailwind CSS is an open source CSS framework. The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables."
+        }
+        isVisible={activeSection == "DOM"}
+        setIsVisible={() => {
+          setActiveSection("DOM");
+        }}
+        setIsInvisible={() => {
+          setActiveSection("");
+        }}
+      />
     </div>
   );
 };
