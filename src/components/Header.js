@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../assets/img/logo.jpg";
+
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loggedUserIn, loggedUserOut } from "./shared/userInfoSlice";
@@ -17,7 +17,7 @@ const TitleLeft = () => {
     <div>
       <Link to="/">
         <svg
-          className="  h-24 w-24 pl-3 py-2"
+          className="  h-20 w-20 pl-3 py-1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >

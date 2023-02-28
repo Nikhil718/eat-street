@@ -55,46 +55,69 @@ const RestaurantMenu = () => {
             )
           )}
         </fieldset>
-      </div>
-      <div className="p-5 ml-40">
         {isVisibal && (
-          <h1 className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50">
+          <h1 className="p-1 h-7 text-sm font-bold text-green-800 rounded-lg bg-green-200">
             Item added to the cart
           </h1>
         )}
-        <h2 className="text-2xl font-bold underline ml-[38rem]">Menu</h2>
-        <ul className="flex flex-wrap">
+      </div>
+      <div className="">
+        <h2 className="text-2xl font-bold underline text-center">Menu</h2>
+        <ul className="flex flex-wrap justify-center mx-4">
           {Object.values(restaurantData?.menu?.items).map((item) => (
-            <div className="flex justify-center" key={item.id}>
-              <li className="  w-72 h-36 p-8 m-1 shadow-lg hover:shadow-2xl rounded-lg">
-                <div>
-                  <div className="text-sm font-bold ml-2">
-                    {item?.name}
-                    {item.isVeg == 0 ? <span>🔴</span> : <span> 🟢 </span>}
-                  </div>
+            <>
+              <div
+                className="w-2/4 h-52 shadow-lg hover:shadow-2xl rounded-lg flex justify-center"
+                key={item.id}
+              >
+                <li className="  w-3/4 h-36 p-8 m-1 s">
+                  <div>
+                    <div className=" flex text-sm font-bold ml-2">
+                      {item?.name}
+                      {item.isVeg == 0 ? <span>🔴</span> : <span> 🟢 </span>}
+                    </div>
 
-                  <div className="ml-2">
-                    {item?.price / 100 == 0 ? (
-                      <span className="text-sm mr-1">
-                        ₹{item?.defaultPrice / 100}
-                      </span>
-                    ) : (
-                      <span className="text-sm mr-1">₹{item?.price / 100}</span>
-                    )}
+                    <div className="ml-2">
+                      <h1>
+                        {item?.price / 100 == 0 ? (
+                          <span className="text-sm mr-1">
+                            ₹{item?.defaultPrice / 100}
+                          </span>
+                        ) : (
+                          <span className="text-sm mr-1">
+                            ₹{item?.price / 100}
+                          </span>
+                        )}
+                      </h1>
+                      <span> {item.description}</span>
+                    </div>
                   </div>
-                  <div className="flex justify-center">
-                    <button
-                      onClick={() => {
-                        handelAddItem(item);
-                      }}
-                      className=" p-1 bg-green-400 rounded text-sm "
-                    >
-                      ADD +
-                    </button>
-                  </div>
+                </li>
+
+                <div className="">
+                  {item.cloudinaryImageId === "" ? (
+                    <img
+                      className="w-28 h-20 m-3 rounded-lg"
+                      src="https://t3.ftcdn.net/jpg/00/70/49/52/360_F_70495270_2aJc2punK2LJVhMCU7zxJdjRaKBS6wjy.jpg"
+                    />
+                  ) : (
+                    <img
+                      className="w-28 h-20 m-3 rounded-lg"
+                      src={CARD_IMG_URL + item?.cloudinaryImageId}
+                    />
+                  )}
+
+                  <button
+                    onClick={() => {
+                      handelAddItem(item);
+                    }}
+                    className=" p-1 ml-11 bg-green-400 rounded text-sm "
+                  >
+                    ADD +
+                  </button>
                 </div>
-              </li>
-            </div>
+              </div>
+            </>
           ))}
         </ul>
       </div>

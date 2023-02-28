@@ -1,10 +1,6 @@
 import { CARD_IMG_URL } from "../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTag,
-  faUserMinus,
-  faUserPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 const RestaurantCard = ({
   cloudinaryImageId,
@@ -16,7 +12,7 @@ const RestaurantCard = ({
   aggregatedDiscountInfo,
 }) => {
   return (
-    <div className="w-60 h-80 p-8 m-4  shadow-2xl hover:shadow-inner hover:border-2 rounded-lg ">
+    <div className="w-60 h-80 p-8 m-4  shadow-2xl hover:scale-105 border-2 rounded-lg ">
       <img alt="image" src={CARD_IMG_URL + cloudinaryImageId}></img>
       <h2 className="font-bold">{name}</h2>
       <h3 className="text-sm">{cuisines.slice(0, 6).join(", ")}</h3>
