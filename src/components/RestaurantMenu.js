@@ -10,13 +10,12 @@ const RestaurantMenu = () => {
   const [isVisibal, setIsVisibal] = useState(false);
   const { restaurantId } = useParams();
   const restaurantData = useRestaurant(restaurantId);
-  console.log(restaurantData);
 
   const dispatch = useDispatch();
 
   const handelAddItem = (item) => {
     dispatch(addItem(item));
-    console.log(item);
+
     setIsVisibal(true);
     setTimeout(() => {
       setIsVisibal(false);
@@ -62,7 +61,12 @@ const RestaurantMenu = () => {
         )}
       </div>
       <div className="">
-        <h2 className="text-2xl font-bold underline text-center">Menu</h2>
+        <h2
+          className="text-2xl font-bold underline text-center"
+          data-testid="menu-item"
+        >
+          Menu
+        </h2>
         <ul className="flex flex-wrap justify-center mx-4">
           {Object.values(restaurantData?.menu?.items).map((item) => (
             <>
@@ -108,6 +112,7 @@ const RestaurantMenu = () => {
                   )}
 
                   <button
+                    data-testid="add-Btn"
                     onClick={() => {
                       handelAddItem(item);
                     }}

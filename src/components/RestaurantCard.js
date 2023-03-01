@@ -16,7 +16,7 @@ const RestaurantCard = ({
       <img alt="image" src={CARD_IMG_URL + cloudinaryImageId}></img>
       <h2 className="font-bold">{name}</h2>
       <h3 className="text-sm">{cuisines.slice(0, 6).join(", ")}</h3>
-      {console.log(cuisines)}
+
       <h4>{deliveryTime} mins</h4>
       <h3 className="text-sm">
         {costForTwoString}{" "}

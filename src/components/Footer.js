@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div>
+    <div data-testid="footer">
       <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900 ">
         <div className="text-lg text-gray-500 sm:text-center dark:text-gray-400">
           <h1>You don't need a silver fork to eat good food.</h1>

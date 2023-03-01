@@ -16,7 +16,7 @@ const Cart = () => {
 
   return itemLength == 0 ? (
     <div>
-      <div className="flex justify-center">
+      <div data-testid="complete-cart" className="flex justify-center">
         <img
           alt="cart-empty-img"
           src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png"

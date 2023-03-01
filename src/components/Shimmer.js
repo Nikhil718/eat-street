@@ -1,6 +1,6 @@
 const Shimmer = () => {
   return (
-    <>
+    <div data-testid="shimmer">
       <div className=" w-full  p-24 animate-pulse bg-gray-400 mb-3 ">
         <div className="w-80 h-8  rounded-lg bg-gray-100 mb-3"></div>
       </div>
@@ -22,7 +22,7 @@ const Shimmer = () => {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

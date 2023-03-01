@@ -52,8 +52,9 @@ const Body = () => {
             style={{ fontSize: "2em" }}
           />
         </div>
-        <div className="">
+        <div data-testid="search-btn">
           <input
+            data-testid="search-input"
             className="w-[450px] border-2 border-solid p-2 rounded-l-full"
             type="text"
             placeholder="Search any restaurant..."
@@ -73,7 +74,10 @@ const Body = () => {
         <p>{allRestaurants.length} Restaurants Near You</p>
       </div>
 
-      <div className=" px-11 flex flex-wrap justify-center">
+      <div
+        className=" px-11 flex flex-wrap justify-center"
+        data-testid="restaurant-list"
+      >
         {filteredRes.length == 0 ? (
           <h3>No match found for "{searchText}". Try different restaurant.</h3>
         ) : (
