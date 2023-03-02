@@ -71,7 +71,7 @@ const Body = () => {
       </div>
 
       <div className=" p-2 font-bold text-2xl ml-36">
-        <p>{allRestaurants.length} Restaurants Near You</p>
+        <p>{filteredRes.length} Restaurants Near You</p>
       </div>
 
       <div
